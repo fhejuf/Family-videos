@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .img-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+        gap: 5px;
+      }
+      
+      img {
+        width: 100%;
+        height: auto;
+        border-width: 3px 10px; /* 3px top and bottom, 10px left and right */
+    border-style: solid;
+    border-color: white;
+      }
+      .video-container {
+        display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Use row if you want them side by side */
+            margin-bottom: 20px; /* Adjust the space between videos */
+            padding-bottom: 10px; /* Adjust the padding if needed */
+        }
+     #container {
+            display: none;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+<h2>Enter Password</h2>
+<form id="pswd">
+    <input type="password" id="validate" 
+           placeholder="Enter Password">
+    <button type="button" onclick="fun()">Submit</button>
+</form>
+
+
+
+<script>
+    function fun() {
+        let inputPswd = document.getElementById("validate")
+                                .value;
+        let correctPswd = "ronweasley1999";
+        if (inputPswd === correctPswd) {
+            document.getElementById("container")
+                .style.display = "block";
+            document.getElementById("pswd")
+                .style.display = "none";
+        } else {
+            alert("Incorrect password!");
+        }
+    }
+</script>
+<div id="container">
+    <p style="font-size: 20px;text-align: center;">Auction Day photos, videos at bottom</p>
+    <div class="img-grid">
+     <img src= "aaIMG_20191109_080633.jpg" alt="">
+
+
+    </div>
+   
+   
+   <p style="font-size: 20px;text-align: center;">Auction Day videos</p>
+     <div class="video-container">
+        <iframe width="840" height="472" src="https://www.youtube.com/embed/pd5grlHgUk8?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+   </div>
+    
+  </body>
+</html>
